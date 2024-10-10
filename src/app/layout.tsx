@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Header from "./_components/Header";
 
 const pretendardFont = localFont({
   src: "../../public/fonts/PretendardVariable.woff2",
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html>
       <body className={pretendardFont.className}>
+        <Header />
         {children}
         {modal}
         <div id="modal-root" />

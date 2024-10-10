@@ -1,9 +1,9 @@
 import { Modal } from "./modal";
 
-export default function PhotoModal({
-  params: { id: photoId },
+export default function IssueModal({
+  params: { id: issueId },
 }: {
   params: { id: string };
 }) {
-  return <Modal>{photoId}</Modal>;
+  return <Modal>{issueId}</Modal>;
 }
