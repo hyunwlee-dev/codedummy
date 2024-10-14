@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    appDir: true,
+  },
+  eslint: {
+    dirs: ["app"],
+  },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,
