@@ -1,0 +1,8 @@
+.heading {
+  @apply mb-4 relative text-2xl tablet:text-3xl laptop:text-6xl desktop:text-8xl text-primary font-extrabold;
+}
+
+.heading::after {
+  content: '';
+  @apply absolute w-full h-[2px] top-1/2 translate-y-[-50%] ml-12 bg-[#a6bbcc];
+}

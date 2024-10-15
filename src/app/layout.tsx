@@ -22,7 +22,7 @@ export default function RootLayout({
   modal: React.ReactNode;
 }>) {
   return (
-    <html>
+    <html className="scrollbar-hide">
       <body className={clsx(pretendardFont.className, 'size-full')}>
         <Header />
         <RouterAnimation>{children}</RouterAnimation>
