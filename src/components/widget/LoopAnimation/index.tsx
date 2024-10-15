@@ -17,12 +17,21 @@ export default function LoopAnimation({
     <motion.svg
       className={clsx(
         className,
-        'fixed bottom-0 left-0 right-0 lg:left-1/4 lg:right-1/4',
+        'fixed bottom-0 left-0 right-0 tablet:mx-auto tablet:w-[500px] laptop:w-[800px] desktop:w-[1100px]',
       )}
       viewBox="0 0 1080 1080"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <motion.rect
+        initial="hidden"
+        animate="show"
+        exit="fadeout"
+        variants={container}
+        width="1080"
+        height="1080"
+        fill="#221F1F"
+      />
       <motion.g
         initial="hidden"
         animate="show"

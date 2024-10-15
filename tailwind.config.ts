@@ -7,22 +7,20 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extends: {
+    extend: {
       colors: {
-        extends: {
-          primary: '#A6BBCC',
-          bg: '#221F1F',
-        },
+        primary: '#A6BBCC',
+        bg: '#221F1F',
       },
     },
     screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
-      '2xl': '1536px',
+      mobile: '375px',
+      tablet: '768px',
+      laptop: '1024px',
+      desktop: '1440px',
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar-hide')],
 };
+
 export default config;

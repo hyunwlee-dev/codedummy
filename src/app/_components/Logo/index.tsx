@@ -6,7 +6,12 @@ export default function Logo({ className }: PropsWithClassName) {
   return (
     <>
       <h1 className="sr-only">CodeDummy</h1>
-      <div className={clsx('absolute h-40 w-40', className)}>
+      <div
+        className={clsx(
+          'absolute size-10 tablet:size-20 desktop:size-40',
+          className,
+        )}
+      >
         <Image
           fill
           src="/svgs/logo.svg"

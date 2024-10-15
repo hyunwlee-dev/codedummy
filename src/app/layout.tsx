@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html>
-      <body className={clsx(pretendardFont.className, 'w-dvw h-dvh')}>
+      <body className={clsx(pretendardFont.className, 'size-full')}>
         <Header />
         <RouterAnimation>{children}</RouterAnimation>
         {modal}
