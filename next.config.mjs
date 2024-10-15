@@ -4,12 +4,12 @@ const nextConfig = {
     appDir: true,
   },
   eslint: {
-    dirs: ["app"],
+    dirs: ['app'],
   },
-  webpack: (config) => {
+  webpack: config => {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ["@svgr/webpack"],
+      use: ['@svgr/webpack'],
     });
     return config;
   },
@@ -19,11 +19,11 @@ const nextConfig = {
     },
   },
   images: {
-    domains: ["avatars.githubusercontent.com"],
+    domains: ['avatars.githubusercontent.com'],
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "github.com",
+        protocol: 'https',
+        hostname: 'github.com',
       },
     ],
   },
