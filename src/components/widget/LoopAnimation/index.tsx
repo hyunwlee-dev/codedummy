@@ -15,7 +15,10 @@ export default function LoopAnimation({
 }: PropsWithClassName<LoopAnimationProps>) {
   return (
     <motion.svg
-      className={clsx(className, 'fixed bottom-0 left-0 w-dvw h-dvh')}
+      className={clsx(
+        className,
+        'fixed bottom-0 left-0 right-0 lg:left-1/4 lg:right-1/4',
+      )}
       viewBox="0 0 1080 1080"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -1,15 +1,17 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
-import Header from "./_components/Header";
+import clsx from 'clsx';
+import type { Metadata } from 'next';
+import localFont from 'next/font/local';
+import Header from '@app/_components/Header';
+import RouterAnimation from '@app/_components/RouterAnimation';
+import './globals.css';
 
 const pretendardFont = localFont({
-  src: "../../public/fonts/PretendardVariable.woff2",
+  src: '../../public/fonts/PretendardVariable.woff2',
 });
 
 export const metadata: Metadata = {
-  title: "CodeDummy",
-  description: "CodeDummy 개인 블로그",
+  title: 'CodeDummy',
+  description: 'CodeDummy 개인 블로그',
 };
 
 export default function RootLayout({
@@ -21,9 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html>
-      <body className={pretendardFont.className}>
+      <body className={clsx(pretendardFont.className, 'w-dvw h-dvh')}>
         <Header />
-        {children}
+        <RouterAnimation>{children}</RouterAnimation>
         {modal}
         <div id="modal-root" />
       </body>
