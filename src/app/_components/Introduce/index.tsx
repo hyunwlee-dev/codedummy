@@ -2,8 +2,8 @@ import Image from 'next/image';
 import type { UserType } from '@/types/github';
 import { getUserInfo } from '@apis/github';
 import AnimatedText from '@app/_components/AnimatedText';
-import { Section } from '@components/Section';
 import { info } from '@constants/info';
+import { Section } from '@outer_components/layout';
 import { withAuth } from '@utils/withAuth';
 
 export const tagMap = {
@@ -26,10 +26,10 @@ const textures: TexturesType = [
 
 export default async function Introduce() {
   const whoami = await withAuth<UserType>(options =>
-    getUserInfo(info.owner, options),
+    getUserInfo(info.username, options),
   );
   return (
-    <Section heading="Introduce">
+    <Section>
       <div className="flex flex-row items-center justify-center gap-4 tablet:gap-10 laptop:gap-16 desktop:gap-20">
         <AnimatedText textures={textures} />
         <div className="flex flex-shrink-0 w-[80px] h-[80px] tablet:h-[120px] tablet:w-[120px] laptop:h-[200px] laptop:w-[200px] desktop:h-[300px] desktop:w-[300px] items-center justify-center overflow-hidden rounded-3xl bg-primary">

@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import Image from 'next/image';
-import type { PropsWithClassName } from '@/types/props';
+import { type PropsWithClassName } from '@types';
 
 export default function Logo({ className }: PropsWithClassName) {
   return (

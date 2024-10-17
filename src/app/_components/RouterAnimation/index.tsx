@@ -3,8 +3,7 @@
 import { AnimatePresence } from 'framer-motion';
 import type { PropsWithChildren } from 'react';
 import { useState, useEffect } from 'react';
-import LoopAnimation from '@components/widget/LoopAnimation';
-import { container, item } from '@components/widget/LoopAnimation/motion';
+import { LoopAnimation } from '@outer_components/widget';
 
 export default function RouterAnimation({ children }: PropsWithChildren) {
   const [showAnimation, setShowAnimation] = useState(true);
@@ -17,7 +16,7 @@ export default function RouterAnimation({ children }: PropsWithChildren) {
   return (
     <>
       <AnimatePresence mode="wait">
-        {showAnimation && <LoopAnimation container={container} item={item} />}
+        {showAnimation && <LoopAnimation />}
       </AnimatePresence>
       {!showAnimation && children}
     </>

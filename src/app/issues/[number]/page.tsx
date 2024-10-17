@@ -5,7 +5,7 @@ export function generateStaticParams() {
   return slugs.map(slug => ({ id: slug }));
 }
 
-export default function IssuePage({
+export default async function IssuePage({
   params: { id },
 }: {
   params: { id: string };

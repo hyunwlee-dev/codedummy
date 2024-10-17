@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import Header from '@app/_components/Header';
-import RouterAnimation from '@app/_components/RouterAnimation';
-import './globals.css';
+import Header from '@components/Header';
+import RouterAnimation from '@components/RouterAnimation';
+import '@styles/globals.css';
 
 const pretendardFont = localFont({
   src: '../../public/fonts/PretendardVariable.woff2',

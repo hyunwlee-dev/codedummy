@@ -1,22 +1,21 @@
-import Link from 'next/link';
-import ContanctMe from '@app/_components/ContactMe';
-import Introduce from '@app/_components/Introduce';
-import About from './_components/About';
-import Issues from './_components/Issues';
-import Projects from './_components/Projects';
+import { getRepoIssues } from '@apis/github';
+import About from '@components/About';
+import ContanctMe from '@components/ContactMe';
+import Introduce from '@components/Introduce';
+import Issues from '@components/Issues';
+import Projects from '@components/Projects';
+import { info } from '@constants/info';
+import { type IssueType } from '@types';
+import { withAuth } from '@utils/withAuth';
 
-export default function Page() {
-  const photos = Array.from({ length: 6 }, (_, i) => i + 1);
-
+export default async function Page() {
+  const issues = await withAuth<IssueType[]>(options =>
+    getRepoIssues(info.username, info.repo, 1, 10, options),
+  );
   return (
-    <main className="relative">
+    <main>
       <Introduce />
-      {photos.map(id => (
-        <Link className="card" key={id} href={`/issues/${id}`} passHref>
-          {id}
-        </Link>
-      ))}
-      <Issues />
+      <Issues issues={issues} />
       <About />
       <Projects />
       <ContanctMe />
