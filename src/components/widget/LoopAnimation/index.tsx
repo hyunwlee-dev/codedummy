@@ -1,18 +1,11 @@
 'use client';
 
 import clsx from 'clsx';
-import { motion, type Variants } from 'framer-motion';
-import type { PropsWithClassName } from '@/types/props';
+import { motion } from 'framer-motion';
+import { type PropsWithClassName } from '@types';
 import { container, item } from './motion';
 
-interface LoopAnimationProps {
-  container: Variants;
-  item: Variants;
-}
-
-export default function LoopAnimation({
-  className,
-}: PropsWithClassName<LoopAnimationProps>) {
+export default function LoopAnimation({ className }: PropsWithClassName) {
   return (
     <motion.svg
       className={clsx(
