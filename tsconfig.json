@@ -21,11 +21,14 @@
       "@/*": ["./src/*"],
       "@app/*": ["./src/app/*"],
       "@apis/*": ["./src/apis/*"],
-      "@components/*": ["./src/components/*"],
+      "@outer_components/*": ["./src/components/*"],
+      "@components/*": ["./src/app/_components/*"],
       "@constants/*": ["./src/constants/*"],
-      "@types/*": ["./src/types/*"],
+      "@types": ["./src/types/"],
       "@utils/*": ["./src/utils/*"],
-      "@svgs/*": ["./public/svgs/*"]
+      "@styles/*": ["./src/styles/*"],
+      "@svgs/*": ["./public/svgs/*"],
+      "@images/*": ["./public/images/*"]
     }
   },
   "include": [
