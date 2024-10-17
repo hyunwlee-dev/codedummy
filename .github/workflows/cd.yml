@@ -14,6 +14,13 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
 
+      - name: Create .env
+        env:
+          ENV: ${{ secrets.ENV }}
+        run: |
+          touch ./env
+          echo "$ENV" > ./env
+
       - name: Build
         run: |
           npm install next
