@@ -17,6 +17,7 @@ export default function Logo({ className }: PropsWithClassName) {
           src="/svgs/logo.svg"
           alt="codedummy logo"
           className="absolute"
+          priority
         />
       </div>
     </>

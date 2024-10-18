@@ -10,7 +10,7 @@ export default function LoopAnimation({ className }: PropsWithClassName) {
     <motion.svg
       className={clsx(
         className,
-        'fixed bottom-0 left-0 right-0 tablet:mx-auto tablet:w-[500px] laptop:w-[800px] desktop:w-[1100px]',
+        'absolute bottom-0 left-0 right-0 tablet:mx-auto tablet:w-[500px] laptop:w-[800px] desktop:w-[1100px]',
       )}
       viewBox="0 0 1080 1080"
       fill="none"
