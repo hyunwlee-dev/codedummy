@@ -20,10 +20,7 @@ export default function Section({
       whileInView="show"
       viewport={{ once: true }}
       variants={item}
-      className={clsx(
-        'overflow-hidden min-h-screenHeightWithoutHeader relative mt-4 tablet:mt-6 laptop:mt-10 tablet:mx-auto tablet:w-[500px] laptop:w-[800px] desktop:mx-auto desktop:w-[1100px]',
-        className,
-      )}
+      className={clsx('section', className)}
     >
       {heading && <h2 className="heading">{heading}</h2>}
       {children}
