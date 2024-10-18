@@ -22,7 +22,7 @@ export function Modal({ children }: { children: React.ReactNode }) {
   return createPortal(
     <div className="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-70">
       <dialog ref={dialogRef} className="rounded-xl" onClose={onDismiss}>
-        <div className="p-10 w-[70vh] h-[70vh] overflow-auto scrollbar-hide">
+        <div className="p-10 w-[70vw] h-[70vh] overflow-auto scrollbar-hide">
           <button onClick={onDismiss} className="absolute top-5 right-5">
             <CloseMd />
           </button>
