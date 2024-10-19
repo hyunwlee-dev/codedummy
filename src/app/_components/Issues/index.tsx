@@ -17,6 +17,7 @@ export default function Issues({ issues }: { issues: IssueType[] }) {
             href={`/issues/${issue.number}`}
             passHref
             className={`aspect-video ${bookkFontMyungjo.className} font-bold text-2xl`}
+            scroll={false}
           >
             <IssueCard issue={issue} />
           </Link>
