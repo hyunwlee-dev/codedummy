@@ -22,7 +22,7 @@ export default async function IssueModal({
   return (
     <Modal>
       <Markdown
-        className="markdown markdown-body w-full h-full"
+        className="markdown markdown-body size-full"
         remarkPlugins={[remarkGfm]}
         components={{
           code({ className, children, ...props }) {

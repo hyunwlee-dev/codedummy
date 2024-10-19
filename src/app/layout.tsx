@@ -1,13 +1,9 @@
 import clsx from 'clsx';
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
 import Header from '@components/Header';
-import RouterAnimation from '@components/RouterAnimation';
 import '@styles/globals.css';
-
-const pretendardFont = localFont({
-  src: '../../public/fonts/PretendardVariable.woff2',
-});
+import RouterAnimation from '@components/RouterAnimation';
+import { pretendardFont } from '@styles/font';
 
 export const metadata: Metadata = {
   title: 'CodeDummy',
@@ -23,11 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html className="scrollbar-hide">
-      <body className={clsx(pretendardFont.className, 'size-full')}>
+      <body
+        className={clsx(pretendardFont.className, 'bg-background text-white')}
+      >
         <Header />
         <RouterAnimation>{children}</RouterAnimation>
         {modal}
-        <div id="modal-root" />
       </body>
     </html>
   );

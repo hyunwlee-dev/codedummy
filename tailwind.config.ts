@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         primary: '#A6BBCC',
-        bg: '#221F1F',
+        background: '#221F1F',
       },
     },
     screens: {

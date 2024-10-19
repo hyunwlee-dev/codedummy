@@ -1,35 +1,43 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { type ElementRef, useEffect, useRef } from 'react';
-import { createPortal } from 'react-dom';
-import CloseMd from '@svgs/Close_MD.svg';
+import { useEffect } from 'react';
 
 export function Modal({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-  const dialogRef = useRef<ElementRef<'dialog'>>(null);
 
-  useEffect(() => {
-    if (!dialogRef.current?.open) {
-      dialogRef.current?.showModal();
-    }
-  }, []);
-
-  function onDismiss() {
+  function handleBackdropClick() {
     router.back();
   }
 
-  return createPortal(
-    <div className="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-70">
-      <dialog ref={dialogRef} className="rounded-xl" onClose={onDismiss}>
-        <div className="p-10 w-[70vw] h-[70vh] overflow-auto scrollbar-hide">
-          <button onClick={onDismiss} className="absolute top-5 right-5">
-            <CloseMd />
-          </button>
-          {children}
-        </div>
-      </dialog>
-    </div>,
-    document.getElementById('modal-root')!,
+  function handleBackdropKeyDown(event: KeyboardEvent) {
+    switch (event.key) {
+      case 'Escape':
+        router.back();
+        return;
+      default:
+        return;
+    }
+  }
+
+  useEffect(() => {
+    document.documentElement.classList.add('overflow-hidden');
+    window.addEventListener('keydown', handleBackdropKeyDown);
+
+    return () => {
+      document.documentElement.classList.remove('overflow-hidden');
+      window.removeEventListener('keydown', handleBackdropKeyDown);
+    };
+  }, []);
+
+  return (
+    <div
+      onClick={handleBackdropClick}
+      className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-70 overflow-hidden"
+    >
+      <div className="absolute bg-white rounded-xl p-10 w-[70vw] h-[70vh] overflow-auto scrollbar-hide">
+        {children}
+      </div>
+    </div>
   );
 }
