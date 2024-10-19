@@ -29,6 +29,10 @@ jobs:
           npm install next
           npm run build
 
+      - name: Run Unit Tests
+        run: |
+          npm run test
+
       - name: Docker build and push
         env:
           USERNAME: ${{ secrets.DOCKER_USERNAME }}

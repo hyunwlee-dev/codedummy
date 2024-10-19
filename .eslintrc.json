@@ -51,5 +51,11 @@
     "next-recommended/async-exported-server-actions": "error",
     "next-recommended/export-server-actions-only": "error"
   },
-  "ignorePatterns": [".*.js", "node_modules/", "dist/", "tailwind.config.ts"]
+  "ignorePatterns": [
+    ".*.js",
+    "node_modules/",
+    "dist/",
+    "tailwind.config.ts",
+    "jest.config.ts"
+  ]
 }

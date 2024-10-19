@@ -17,8 +17,7 @@ export default function Section({
   return (
     <motion.section
       initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
+      animate="show"
       variants={item}
       className={clsx('section', className)}
     >
