@@ -2,20 +2,19 @@
 
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
+import { type PropsWithClassName } from '@types';
 import { item } from './motion';
 import './index.css';
 
 export default function Section({
   heading,
+  id,
   children,
   className,
-}: {
-  heading?: string;
-  children: React.ReactNode;
-  className?: string;
-}) {
+}: PropsWithClassName<{ heading?: string; id?: string }>) {
   return (
     <motion.section
+      id={id}
       initial="hidden"
       animate="show"
       variants={item}

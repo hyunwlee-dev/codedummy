@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import ContactMeButton from '@components/ContactMeButton';
 import { container, item } from './motion';
 import './index.css';
 
@@ -51,26 +51,20 @@ export default function AnimatedText({
   textures: { type: TagType; text: string }[];
 }) {
   return (
-    <>
-      <motion.div
-        className="animated-text"
-        initial="hidden"
-        animate="show"
-        variants={container}
-      >
-        {textures.map((item, index) => (
-          <AnimatedCharacters
-            key={index}
-            text={item.text}
-            type={item.type as TagType}
-          />
-        ))}
-        <div className="overflow-hidden">
-          <motion.span variants={item} className="inline-block">
-            <Link href="/">Contact Me</Link>
-          </motion.span>
-        </div>
-      </motion.div>
-    </>
+    <motion.div
+      className="animated-text"
+      initial="hidden"
+      animate="show"
+      variants={container}
+    >
+      {textures.map((item, index) => (
+        <AnimatedCharacters
+          key={index}
+          text={item.text}
+          type={item.type as TagType}
+        />
+      ))}
+      <ContactMeButton />
+    </motion.div>
   );
 }

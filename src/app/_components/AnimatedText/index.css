@@ -3,7 +3,7 @@
   h2 {
     @apply text-2xl tablet:text-3xl laptop:text-6xl desktop:text-8xl text-primary font-extrabold;
   }
-  a {
-    @apply border-b-4 border-primary font-extrabold;
+  button {
+    @apply border-b-2 border-primary font-extrabold;
   }
 }
